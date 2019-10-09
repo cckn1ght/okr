@@ -1,14 +1,13 @@
 package io.qunhao.okr.entity;
+import io.qunhao.okr.entity.audit.DateAudit;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
-public class OkrEntity {
+public class OkrEntity extends DateAudit {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -18,5 +17,7 @@ public class OkrEntity {
     private String owner;
     private String title;
     private String obj;
-    private String[] krs;
+
+    @ElementCollection
+    private List<String> krs;
 }

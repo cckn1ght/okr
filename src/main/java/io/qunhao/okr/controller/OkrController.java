@@ -23,4 +23,12 @@ public class OkrController {
     public List<OkrEntity> findByOwnerId(@RequestParam Long ownerId) {
         return okrRepo.findByOwnerId(ownerId);
     }
+    @PostMapping("")
+    public OkrEntity createOkr(@RequestBody OkrEntity okr) {
+        return okrRepo.save(okr);
+    }
+    @DeleteMapping("/{id}")
+    public void deleteOkr(@PathVariable Long id) {
+        okrRepo.deleteById(id);
+    }
 }
