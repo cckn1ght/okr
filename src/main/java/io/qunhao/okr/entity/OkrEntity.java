@@ -19,5 +19,6 @@ public class OkrEntity extends DateAudit {
     private String obj;
 
     @ElementCollection
+    @OrderColumn
     private List<String> krs;
 }

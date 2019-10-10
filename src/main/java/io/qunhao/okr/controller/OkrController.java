@@ -27,6 +27,10 @@ public class OkrController {
     public OkrEntity createOkr(@RequestBody OkrEntity okr) {
         return okrRepo.save(okr);
     }
+    @PutMapping("")
+    public OkrEntity updateOkr(@RequestBody OkrEntity okr) {
+        return okrRepo.save(okr);
+    }
     @DeleteMapping("/{id}")
     public void deleteOkr(@PathVariable Long id) {
         okrRepo.deleteById(id);
